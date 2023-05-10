@@ -7,5 +7,6 @@ public class Comment {
     private String commentText;
     private List<Comment> replies;
     private Long likeCount;
+    private String commentOwner;
 
 }

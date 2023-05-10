@@ -1,5 +1,5 @@
 package com.hm.bookmark.enums;
 
 public enum Language {
-    PERSIAN,
+    PERSIAN, ENGLISH,FRENCH,ARABIC
 }
