@@ -1,7 +1,11 @@
 package com.hm.bookmark.domain;
 
 import com.hm.bookmark.enums.Language;
+import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.ZonedDateTime;
 
 @Data
@@ -9,16 +13,16 @@ import java.time.ZonedDateTime;
 @Table
 public class Book {
 
-    private String id;
-    private String name;
-    private String author; //TODO must be entity
-    private Long totalPageNumber;
-    private ZonedDateTime publishDate; //todo check name meaning
-    private String genre; //todo must be enum
-    private String translator; //todo must be entity
-    private String publication; //todo must be entity
-    private String description; //todo must be clob
-    private String rangeDate;
-    private Language language;
-    private byte[] pictureBook;
+  @Id private String id;
+  private String name;
+  private String author; // TODO must be entity
+  private Long totalPageNumber;
+  private ZonedDateTime publishDate; // todo check name meaning
+  private String genre; // todo must be enum
+  private String translator; // todo must be entity
+  private String publication; // todo must be entity
+  private String description; // todo must be clob
+  private String rangeDate;
+  private Language language;
+  private byte[] pictureBook;
 }
