@@ -7,8 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.ZonedDateTime;
 import java.util.List;
 
@@ -19,11 +18,14 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Author {
+  @Id
+  private Long id;
   private String name;
   private String family;
   private ZonedDateTime birthDate;
+  @OneToMany
   private List<Book> books;
 
   private LifeStatus lifeStatus;
-  private List<String> nickNames;
+  private String nickNames;
 }

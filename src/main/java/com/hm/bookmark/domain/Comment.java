@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 @Data
@@ -19,6 +20,7 @@ public class Comment {
     @Id
     private String id;
     private String commentText;
+    @OneToMany
     private List<Comment> replies;
     private Long likeCount;
     private String commentOwner;

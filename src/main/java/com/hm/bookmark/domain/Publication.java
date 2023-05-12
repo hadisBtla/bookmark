@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class Publication {
     private String pubAddress;
 
     private String pubPhone;
+    @OneToMany
     private List<Book> books;
 
 }
