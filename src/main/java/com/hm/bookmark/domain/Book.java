@@ -1,6 +1,10 @@
 package com.hm.bookmark.domain;
 
 import com.hm.bookmark.enums.Language;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -11,6 +15,9 @@ import java.time.ZonedDateTime;
 @Data
 @Entity
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Book {
 
   @Id private String id;
