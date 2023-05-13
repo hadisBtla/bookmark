@@ -7,9 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.ZonedDateTime;
 
 @Data
@@ -20,7 +18,10 @@ import java.time.ZonedDateTime;
 @Builder
 public class Book {
 
-  @Id private String id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private String id;
+
   private String name;
   private String author; // TODO must be entity
   private Long totalPageNumber;

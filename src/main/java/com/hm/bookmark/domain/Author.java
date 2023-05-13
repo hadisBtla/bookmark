@@ -19,12 +19,13 @@ import java.util.List;
 @Builder
 public class Author {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
+
   private String name;
   private String family;
   private ZonedDateTime birthDate;
-  @OneToMany
-  private List<Book> books;
+  @OneToMany private List<Book> books;
 
   private LifeStatus lifeStatus;
   private String nickNames;

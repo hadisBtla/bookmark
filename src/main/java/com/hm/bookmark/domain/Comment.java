@@ -5,11 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
+
 @Data
 @Entity
 @Table
@@ -17,12 +15,12 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Comment {
-    @Id
-    private String id;
-    private String commentText;
-    @OneToMany
-    private List<Comment> replies;
-    private Long likeCount;
-    private String commentOwner;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private String id;
 
+  private String commentText;
+  @OneToMany private List<Comment> replies;
+  private Long likeCount;
+  private String commentOwner;
 }
