@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -18,13 +15,13 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class Publication {
-    @Id
-    private String id;
-    private String pubName;
-    private String pubAddress;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Long id;
 
-    private String pubPhone;
-    @OneToMany
-    private List<Book> books;
+  private String pubName;
+  private String pubAddress;
 
+  private String pubPhone;
+  @OneToMany private List<Book> books;
 }
